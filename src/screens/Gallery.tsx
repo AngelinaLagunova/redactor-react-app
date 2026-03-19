@@ -38,7 +38,8 @@ export default function Gallery() {
 
         {/* map это функция для работы с массивами. получается здесь мы для каждого элемента массива формируем вот такой блок (который обернут в Link). Link это как тег <a> но используется только в реакте чтобы не перезагружать полностью страницу при переходах по ссылкам */}
         {projects.map((project) => (
-          <Link key={project.id} to={`/editor/${project.id}`}>
+          // здесь как раз вставляется айди для реализации динамического пути, который мы видим в файле App.tsx
+          <Link key={project.id} to={`/editor/${project.id}`}> 
             <motion.div
               whileHover={{ y: -5 }} //плавный переход
               className="bg-slate-800 p-4 rounded shadow cursor-pointer select-none">
